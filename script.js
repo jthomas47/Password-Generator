@@ -3,6 +3,7 @@ var length;
 var includeLowercase;
 var includeUpercase; 
 var includeNumbers; 
+var includeSpecialCharacters; 
 
 
 
@@ -20,6 +21,7 @@ var includeNumbers;
     includeLowercase = confirm("do you want to include lowercase letters? (click OK for yes or cancel for no)"); 
     includeUppercase = confirm("do you want to include uppercase letters? (click OK for yes or cancel for no)"); 
     includeNumbers = confirm("do you want to include numbers? (click OK for yes or cancel for no)"); 
+    includeSpecialCharacters = confirm("do you want to include special characters? (click OK for yes or cancel for no)");
   }
 }
 
@@ -28,10 +30,6 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
- 
-  
-
-
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
