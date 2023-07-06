@@ -1,17 +1,28 @@
 // Assignment code here
+var length;
+var includeLowercase;
 
+
+
+ function generatePassword() {
+  length = prompt("how many characters? (must be 8 characters and no more than 128 characters)");
+  if (!length) {
+    alert("must enter a value");
+  } else if (length < 8) {
+    alert("password must be at least 8 characters");
+  } else if (length > 128) {
+    alert("password must be less than 128 characters"); 
+  } else {
+    includeLowercase = confirm("do you want to include lowercase letters? (click OK for yes or cancel for no)"); 
+  }
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var length = prompt("must be 8 characters and no more than 128 characters");
-  if (length < 8) {
-    alert("password must be at least 8 characters");
-  } else if (length > 128) {
-    alert("password must be less than 128 characters"); 
-  } 
+ 
   
 
 
