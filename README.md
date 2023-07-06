@@ -10,4 +10,4 @@ link
 https://jthomas47.github.io/Password-Generator/
 
 screenshot 
-![Screenshot](./images/password-generator.password-generator - Copy.PNG)
+![Screenshot](./images/password-generator%20-%20Copy.PNG)
