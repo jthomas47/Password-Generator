@@ -23,6 +23,10 @@ var includeSpecialCharacters;
     includeNumbers = confirm("do you want to include numbers? (click OK for yes or cancel for no)"); 
     includeSpecialCharacters = confirm("do you want to include special characters? (click OK for yes or cancel for no)");
   }
+
+  if (!includeLowercase && !includeUpercase && !includeNumbers && !includeSpecialCharacters) {
+    alert("you must choose to include at least one of these options: lowercase letters, uppercase letters, numbers, and/or special characters")
+  }
 }
 
 // Get references to the #generate element
