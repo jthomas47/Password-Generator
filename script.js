@@ -1,7 +1,7 @@
 // Assignment code here
 var length;
 var includeLowercase;
-var includeUpercase; 
+var includeUppercase;   
 var includeNumbers; 
 var includeSpecialCharacters; 
 
@@ -13,23 +13,6 @@ var spercialChars = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "-",
 var criteria = [];
 var randomizeCriteria = []; 
 var finalPassword = [];
-
-
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   length = prompt("how many characters? (must be between 8 and 128 characters)");
@@ -46,13 +29,13 @@ function generatePassword() {
     includeSpecialCharacters = confirm("do you want to include special characters? (click OK for yes or cancel for no)");
   
 
-  if (includeLowercase && includeUpercase && includeNumbers && includeSpecialCharacters) {
+  if (includeLowercase && includeUppercase && includeNumbers && includeSpecialCharacters) {
     criteria = lowercase.concat(uppercase,numbers,spercialChars); 
-  } else if (includeLowercase && includeUpercase && includeNumbers) {
+  } else if (includeLowercase && includeUppercase && includeNumbers) {
     criteria = lowercase.concat(uppercase,numbers);
-  }  else if (includeLowercase && includeUpercase && includeSpecialCharacters) {
+  }  else if (includeLowercase && includeUppercase && includeSpecialCharacters) {
     criteria = lowercase.concat(uppercase,spercialChars);
-  }  else if (includeLowercase && includeUpercase) {
+  }  else if (includeLowercase && includeUppercase) {
     criteria = lowercase.concat(uppercase);
   }  else if (includeLowercase && includeNumbers && includeSpecialCharacters) {
     criteria = lowercase.concat(numbers,spercialChars);
@@ -62,13 +45,13 @@ function generatePassword() {
     criteria = lowercase.concat(spercialChars);
   }  else if (includeLowercase) {
     criteria = lowercase; 
-  }  else if (includeUpercase && includeNumbers && includeSpecialCharacters) {
+  }  else if (includeUppercase && includeNumbers && includeSpecialCharacters) {
     criteria = uppercase.concat(numbers,spercialChars);
-  }  else if  (includeUpercase && includeNumbers) {
+  }  else if  (includeUppercase && includeNumbers) {
     criteria = uppercase.concat(numbers);
-  }  else if (includeUpercase && includeSpecialCharacters) {
+  }  else if (includeUppercase && includeSpecialCharacters) {
     criteria = uppercase.concat(spercialChars);
-  }  else if (includeUpercase) {
+  }  else if (includeUppercase) {
     criteria = uppercase;
   }  else if (includeNumbers && includeSpecialCharacters) {
     criteria = numbers.concat(spercialChars);
@@ -82,16 +65,29 @@ function generatePassword() {
 
   for (var i = 0; i < length; i++) {
     randomizeCriteria = criteria[Math.floor(Math.random() * criteria.length)];
-    console.log(randomizeCriteria);
      finalPassword.push(randomizeCriteria); 
   }
 
-  // password = finalPassword.join("");
-  password = finalPassword.join("");
-  console.log(password);
-  return password;
+  return finalPassword.join("");
 
 }
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
 
 
 
