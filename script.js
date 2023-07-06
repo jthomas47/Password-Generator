@@ -2,6 +2,8 @@
 var length;
 var includeLowercase;
 var includeUpercase; 
+var includeNumbers; 
+
 
 
 
@@ -17,6 +19,7 @@ var includeUpercase;
   } else {
     includeLowercase = confirm("do you want to include lowercase letters? (click OK for yes or cancel for no)"); 
     includeUppercase = confirm("do you want to include uppercase letters? (click OK for yes or cancel for no)"); 
+    includeNumbers = confirm("do you want to include numbers? (click OK for yes or cancel for no)"); 
   }
 }
 
