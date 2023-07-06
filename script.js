@@ -1,11 +1,13 @@
 // Assignment code here
 var length;
 var includeLowercase;
+var includeUpercase; 
+
 
 
 
  function generatePassword() {
-  length = prompt("how many characters? (must be 8 characters and no more than 128 characters)");
+  length = prompt("how many characters? (must be between 8 and 128 characters)");
   if (!length) {
     alert("must enter a value");
   } else if (length < 8) {
@@ -14,6 +16,7 @@ var includeLowercase;
     alert("password must be less than 128 characters"); 
   } else {
     includeLowercase = confirm("do you want to include lowercase letters? (click OK for yes or cancel for no)"); 
+    includeUppercase = confirm("do you want to include uppercase letters? (click OK for yes or cancel for no)"); 
   }
 }
 
